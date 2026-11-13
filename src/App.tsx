@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+﻿import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
   supabase,
   BuiltSellListing,
@@ -570,9 +570,9 @@ ${
   const isFirstAccountAdmin = currentUserProfile?.role === 'admin';
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-950 text-slate-100">
+    <div className="min-h-screen flex flex-col bg-[#06080C] text-slate-100">
       {/* Navigation Header */}
-      <header className="sticky top-0 z-30 backdrop-blur-xl bg-slate-950/85 border-b border-slate-800/80">
+      <header className="sticky top-0 z-30 backdrop-blur-xl bg-[#06080C]/85 border-b border-white/[0.08]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
           {/* Brand Logo */}
           <div className="flex items-center gap-6">
@@ -580,14 +580,14 @@ ${
               onClick={() => navigate('/')}
               className="flex items-center gap-2.5 text-left group cursor-pointer"
             >
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 via-purple-500 to-cyan-400 p-[1px] shadow-lg shadow-indigo-500/20">
-                <div className="w-full h-full bg-slate-950 rounded-[11px] flex items-center justify-center">
-                  <Cpu className="w-5 h-5 text-indigo-400 group-hover:text-cyan-300 transition-colors" />
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 via-cyan-500 to-cyan-400 p-[1px] shadow-lg shadow-emerald-500/20">
+                <div className="w-full h-full bg-[#06080C] rounded-[11px] flex items-center justify-center">
+                  <Cpu className="w-5 h-5 text-emerald-400 group-hover:text-cyan-300 transition-colors" />
                 </div>
               </div>
               <div>
                 <div className="flex items-center gap-1.5">
-                  <span className="font-extrabold text-lg tracking-tight bg-gradient-to-r from-white via-indigo-200 to-cyan-300 bg-clip-text text-transparent">
+                  <span className="font-extrabold text-lg tracking-tight bg-gradient-to-r from-white via-emerald-200 to-cyan-300 bg-clip-text text-transparent">
                     BuiltSELL
                   </span>
                   <span className="text-[10px] font-semibold uppercase px-1.5 py-0.5 rounded bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
@@ -606,19 +606,19 @@ ${
                 onClick={() => navigate('/')}
                 className={`px-3.5 py-2 rounded-lg text-sm font-medium transition cursor-pointer flex items-center gap-2 ${
                   route === '/'
-                    ? 'bg-slate-800/90 text-white shadow-sm'
-                    : 'text-slate-400 hover:text-white hover:bg-slate-900'
+                    ? 'bg-[#121926]/90 text-white shadow-sm'
+                    : 'text-slate-400 hover:text-white hover:bg-[#0B1018]'
                 }`}
               >
-                <Layers className="w-4 h-4 text-indigo-400" />
+                <Layers className="w-4 h-4 text-emerald-400" />
                 Explore Projects
               </button>
               <button
                 onClick={() => navigate('/command')}
                 className={`px-3.5 py-2 rounded-lg text-sm font-medium transition cursor-pointer flex items-center gap-2 ${
                   route === '/command'
-                    ? 'bg-indigo-600/25 text-indigo-200 border border-indigo-500/40 shadow-sm'
-                    : 'text-slate-400 hover:text-white hover:bg-slate-900'
+                    ? 'bg-emerald-600/25 text-emerald-200 border border-emerald-500/40 shadow-sm'
+                    : 'text-slate-400 hover:text-white hover:bg-[#0B1018]'
                 }`}
               >
                 <FolderDown className="w-4 h-4 text-cyan-400" />
@@ -631,7 +631,7 @@ ${
               </button>
               <button
                 onClick={() => openUploadModal('ai_project')}
-                className="px-3.5 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-900 transition cursor-pointer flex items-center gap-2"
+                className="px-3.5 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-[#0B1018] transition cursor-pointer flex items-center gap-2"
               >
                 <UploadCloud className="w-4 h-4 text-emerald-400" />
                 Upload Project
@@ -650,11 +650,11 @@ ${
             </button>
 
             {currentUserProfile ? (
-              <div className="flex items-center gap-2 pl-2 border-l border-slate-800">
+              <div className="flex items-center gap-2 pl-2 border-l border-white/[0.08]">
                 <div className="text-right hidden sm:block">
                   <div className="flex items-center justify-end gap-1.5">
                     <span className="text-xs font-semibold text-white">{currentUserProfile.full_name}</span>
-                    <span className="px-1.5 py-0.5 text-[10px] font-mono uppercase rounded bg-slate-800 text-slate-300">
+                    <span className="px-1.5 py-0.5 text-[10px] font-mono uppercase rounded bg-[#121926] text-slate-300">
                       Creator
                     </span>
                   </div>
@@ -663,7 +663,7 @@ ${
                 <button
                   onClick={handleSignOut}
                   title="Sign Out"
-                  className="p-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-rose-400 border border-slate-800 cursor-pointer transition"
+                  className="p-2 rounded-lg bg-[#0B1018] hover:bg-[#121926] text-slate-400 hover:text-rose-400 border border-white/[0.08] cursor-pointer transition"
                 >
                   <LogOut className="w-4 h-4" />
                 </button>
@@ -675,9 +675,9 @@ ${
                     setAuthMode('login');
                     setAuthModalOpen(true);
                   }}
-                  className="px-3.5 py-2 rounded-lg text-xs sm:text-sm font-medium text-slate-300 hover:text-white bg-slate-900 hover:bg-slate-800 border border-slate-800 cursor-pointer transition flex items-center gap-1.5"
+                  className="px-3.5 py-2 rounded-lg text-xs sm:text-sm font-medium text-slate-300 hover:text-white bg-[#0B1018] hover:bg-[#121926] border border-white/[0.08] cursor-pointer transition flex items-center gap-1.5"
                 >
-                  <LogIn className="w-4 h-4 text-indigo-400" />
+                  <LogIn className="w-4 h-4 text-emerald-400" />
                   Login
                 </button>
                 <button
@@ -685,7 +685,7 @@ ${
                     setAuthMode('signup');
                     setAuthModalOpen(true);
                   }}
-                  className="px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-600/20 cursor-pointer transition hidden sm:flex items-center gap-1.5"
+                  className="px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-600/20 cursor-pointer transition hidden sm:flex items-center gap-1.5"
                 >
                   <UserPlus className="w-4 h-4" />
                   Sign Up
@@ -704,7 +704,7 @@ ${
               ? 'bg-emerald-950/80 border-emerald-500/40 text-emerald-200'
               : bannerMessage.type === 'error'
               ? 'bg-rose-950/80 border-rose-500/40 text-rose-200'
-              : 'bg-indigo-950/80 border-indigo-500/40 text-indigo-200'
+              : 'bg-emerald-950/80 border-emerald-500/40 text-emerald-200'
           }`}
         >
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
@@ -725,7 +725,7 @@ ${
         {route === '/' && (
           <>
             {/* Hero Section */}
-            <section className="relative overflow-hidden rounded-3xl border border-slate-800/90 bg-gradient-to-br from-slate-900 via-slate-950 to-indigo-950/50 p-6 sm:p-10 mb-8 shadow-2xl">
+            <section className="relative overflow-hidden rounded-3xl border border-white/[0.08]/90 bg-gradient-to-br from-[#0B1018] via-slate-950 to-emerald-950/50 p-6 sm:p-10 mb-8 shadow-2xl">
               <div className="relative z-10 max-w-3xl">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-medium mb-4">
                   <Sparkles className="w-4 h-4 text-emerald-400" />
@@ -733,7 +733,7 @@ ${
                 </div>
                 <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
                   Upload, Command & Download Free{' '}
-                  <span className="bg-gradient-to-r from-indigo-400 via-purple-300 to-cyan-300 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-emerald-400 via-cyan-300 to-cyan-300 bg-clip-text text-transparent">
                     AI Projects, Prompts & Code
                   </span>
                 </h1>
@@ -745,14 +745,14 @@ ${
                 <div className="mt-6 flex flex-wrap items-center gap-3">
                   <button
                     onClick={() => openUploadModal('ai_project')}
-                    className="px-5 py-2.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-emerald-500 to-cyan-500 text-slate-950 hover:from-emerald-400 hover:to-cyan-400 transition shadow-lg cursor-pointer flex items-center gap-2"
+                    className="px-5 py-2.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-emerald-500 to-cyan-500 text-zinc-950 hover:from-emerald-400 hover:to-cyan-400 transition shadow-lg cursor-pointer flex items-center gap-2"
                   >
                     <UploadCloud className="w-4 h-4" />
                     Upload Your Project (.zip / Source / Prompt)
                   </button>
                   <button
                     onClick={() => navigate('/command')}
-                    className="px-4 py-2.5 rounded-xl font-medium text-sm bg-slate-900/90 hover:bg-slate-800 text-slate-200 border border-slate-700/80 transition cursor-pointer flex items-center gap-2"
+                    className="px-4 py-2.5 rounded-xl font-medium text-sm bg-[#0B1018]/90 hover:bg-[#121926] text-slate-200 border border-white/[0.12] transition cursor-pointer flex items-center gap-2"
                   >
                     <FolderDown className="w-4 h-4 text-cyan-400" />
                     Open Command & Download Hub
@@ -761,26 +761,26 @@ ${
               </div>
 
               {/* Quick Stats */}
-              <div className="mt-8 pt-6 border-t border-slate-800/80 grid grid-cols-2 sm:grid-cols-4 gap-4">
-                <div className="bg-slate-900/60 border border-slate-800/80 rounded-xl p-3.5">
+              <div className="mt-8 pt-6 border-t border-white/[0.08] grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <div className="bg-[#0B1018]/65 border border-white/[0.08] rounded-xl p-3.5">
                   <p className="text-xs text-slate-400">Free Assets</p>
                   <p className="text-xl font-bold text-white mt-0.5">
                     {listings.filter((l) => l.status === 'published').length}
                   </p>
                 </div>
-                <div className="bg-slate-900/60 border border-slate-800/80 rounded-xl p-3.5">
+                <div className="bg-[#0B1018]/65 border border-white/[0.08] rounded-xl p-3.5">
                   <p className="text-xs text-slate-400">AI Projects</p>
                   <p className="text-xl font-bold text-cyan-400 mt-0.5">
                     {listings.filter((l) => l.category === 'ai_project' && l.status === 'published').length}
                   </p>
                 </div>
-                <div className="bg-slate-900/60 border border-slate-800/80 rounded-xl p-3.5">
+                <div className="bg-[#0B1018]/65 border border-white/[0.08] rounded-xl p-3.5">
                   <p className="text-xs text-slate-400">AI Prompts</p>
                   <p className="text-xl font-bold text-amber-300 mt-0.5">
                     {listings.filter((l) => l.category === 'ai_prompt' && l.status === 'published').length}
                   </p>
                 </div>
-                <div className="bg-slate-900/60 border border-slate-800/80 rounded-xl p-3.5">
+                <div className="bg-[#0B1018]/65 border border-white/[0.08] rounded-xl p-3.5">
                   <p className="text-xs text-slate-400">Platform Cost</p>
                   <p className="text-xl font-bold text-emerald-400 mt-0.5">100% FREE</p>
                 </div>
@@ -794,8 +794,8 @@ ${
                   onClick={() => setCategoryFilter('all')}
                   className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition cursor-pointer flex items-center gap-2 border ${
                     categoryFilter === 'all'
-                      ? 'bg-indigo-600 text-white border-indigo-500 shadow-md shadow-indigo-600/20'
-                      : 'bg-slate-900 text-slate-400 border-slate-800 hover:text-white'
+                      ? 'bg-emerald-600 text-white border-emerald-500 shadow-md shadow-emerald-600/20'
+                      : 'bg-[#0B1018] text-slate-400 border-white/[0.08] hover:text-white'
                   }`}
                 >
                   <Layers className="w-4 h-4" />
@@ -805,8 +805,8 @@ ${
                   onClick={() => setCategoryFilter('ai_project')}
                   className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition cursor-pointer flex items-center gap-2 border ${
                     categoryFilter === 'ai_project'
-                      ? 'bg-indigo-600 text-white border-indigo-500 shadow-md shadow-indigo-600/20'
-                      : 'bg-slate-900 text-slate-400 border-slate-800 hover:text-white'
+                      ? 'bg-emerald-600 text-white border-emerald-500 shadow-md shadow-emerald-600/20'
+                      : 'bg-[#0B1018] text-slate-400 border-white/[0.08] hover:text-white'
                   }`}
                 >
                   <Cpu className="w-4 h-4 text-cyan-400" />
@@ -817,8 +817,8 @@ ${
                   onClick={() => setCategoryFilter('ai_prompt')}
                   className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition cursor-pointer flex items-center gap-2 border ${
                     categoryFilter === 'ai_prompt'
-                      ? 'bg-indigo-600 text-white border-indigo-500 shadow-md shadow-indigo-600/20'
-                      : 'bg-slate-900 text-slate-400 border-slate-800 hover:text-white'
+                      ? 'bg-emerald-600 text-white border-emerald-500 shadow-md shadow-emerald-600/20'
+                      : 'bg-[#0B1018] text-slate-400 border-white/[0.08] hover:text-white'
                   }`}
                 >
                   <Sparkles className="w-4 h-4 text-amber-400" />
@@ -829,8 +829,8 @@ ${
                   onClick={() => setCategoryFilter('coding')}
                   className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition cursor-pointer flex items-center gap-2 border ${
                     categoryFilter === 'coding'
-                      ? 'bg-indigo-600 text-white border-indigo-500 shadow-md shadow-indigo-600/20'
-                      : 'bg-slate-900 text-slate-400 border-slate-800 hover:text-white'
+                      ? 'bg-emerald-600 text-white border-emerald-500 shadow-md shadow-emerald-600/20'
+                      : 'bg-[#0B1018] text-slate-400 border-white/[0.08] hover:text-white'
                   }`}
                 >
                   <Code2 className="w-4 h-4 text-emerald-400" />
@@ -846,7 +846,7 @@ ${
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search free projects, prompts, or code..."
-                  className="w-full pl-10 pr-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-indigo-500"
+                  className="w-full pl-10 pr-4 py-2 rounded-xl bg-[#0B1018] border border-white/[0.08] text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-emerald-500"
                 />
               </div>
             </div>
@@ -857,7 +857,7 @@ ${
                 {[1, 2, 3].map((n) => (
                   <div
                     key={n}
-                    className="h-80 rounded-2xl bg-slate-900/50 border border-slate-800 animate-pulse p-6"
+                    className="h-80 rounded-2xl bg-[#0B1018]/55 border border-white/[0.08] animate-pulse p-6"
                   />
                 ))}
               </div>
@@ -866,7 +866,7 @@ ${
                 {filteredListings.map((item) => (
                   <div
                     key={item.id}
-                    className="group rounded-2xl bg-slate-900/70 hover:bg-slate-900 border border-slate-800/90 hover:border-indigo-500/50 transition-all duration-200 flex flex-col justify-between p-6 shadow-lg"
+                    className="group rounded-2xl bg-[#0B1018]/75 hover:bg-[#0B1018] border border-white/[0.08]/90 hover:border-emerald-500/50 transition-all duration-200 flex flex-col justify-between p-6 shadow-lg"
                   >
                     <div>
                       {/* Category + Free Badge Row */}
@@ -906,7 +906,7 @@ ${
                       {/* Title & Summary */}
                       <h3
                         onClick={() => setSelectedListing(item)}
-                        className="text-lg font-bold text-white group-hover:text-indigo-300 transition cursor-pointer line-clamp-2"
+                        className="text-lg font-bold text-white group-hover:text-emerald-300 transition cursor-pointer line-clamp-2"
                       >
                         {item.title}
                       </h3>
@@ -915,17 +915,17 @@ ${
                       {/* Technical Metadata Pills */}
                       <div className="mt-4 flex flex-wrap gap-1.5">
                         {item.ai_model && (
-                          <span className="px-2 py-0.5 rounded bg-slate-950 border border-slate-800 text-[11px] text-indigo-300 font-mono">
+                          <span className="px-2 py-0.5 rounded bg-[#06080C] border border-white/[0.08] text-[11px] text-emerald-300 font-mono">
                             {item.ai_model}
                           </span>
                         )}
                         {item.programming_language && (
-                          <span className="px-2 py-0.5 rounded bg-slate-950 border border-slate-800 text-[11px] text-cyan-300 font-mono">
+                          <span className="px-2 py-0.5 rounded bg-[#06080C] border border-white/[0.08] text-[11px] text-cyan-300 font-mono">
                             {item.programming_language}
                           </span>
                         )}
                         {item.framework && (
-                          <span className="px-2 py-0.5 rounded bg-slate-950 border border-slate-800 text-[11px] text-slate-300">
+                          <span className="px-2 py-0.5 rounded bg-[#06080C] border border-white/[0.08] text-[11px] text-slate-300">
                             {item.framework}
                           </span>
                         )}
@@ -938,14 +938,14 @@ ${
 
                       {/* Code or Prompt Preview Snippet */}
                       {(item.prompt_text || item.code_snippet) && (
-                        <div className="mt-4 rounded-xl bg-slate-950/90 border border-slate-800/90 p-3 font-mono text-[11px] text-slate-300 relative">
+                        <div className="mt-4 rounded-xl bg-[#06080C]/90 border border-white/[0.08]/90 p-3 font-mono text-[11px] text-slate-300 relative">
                           <div className="flex items-center justify-between text-[10px] text-slate-500 mb-1 pb-1 border-b border-slate-900">
                             <span>{item.prompt_text ? 'PROMPT PREVIEW' : 'CODE SNIPPET'}</span>
                             <button
                               onClick={() =>
                                 copyToClipboard(item.prompt_text || item.code_snippet || '', item.id)
                               }
-                              className="flex items-center gap-1 text-indigo-400 hover:text-indigo-300 cursor-pointer"
+                              className="flex items-center gap-1 text-emerald-400 hover:text-emerald-300 cursor-pointer"
                             >
                               {copiedId === item.id ? (
                                 <>
@@ -966,7 +966,7 @@ ${
                     </div>
 
                     {/* Card Footer */}
-                    <div className="mt-5 pt-4 border-t border-slate-800/80">
+                    <div className="mt-5 pt-4 border-t border-white/[0.08]">
                       <div className="flex items-center justify-between gap-2">
                         <div className="flex items-center gap-3 text-xs text-slate-400">
                           <span className="flex items-center gap-1">
@@ -982,14 +982,14 @@ ${
                         <div className="flex items-center gap-1.5">
                           <button
                             onClick={() => setSelectedListing(item)}
-                            className="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium transition cursor-pointer flex items-center gap-1"
+                            className="px-2.5 py-1.5 rounded-lg bg-[#121926] hover:bg-white/[0.10] text-slate-200 text-xs font-medium transition cursor-pointer flex items-center gap-1"
                           >
                             <Eye className="w-3.5 h-3.5" />
                             Inspect
                           </button>
                           <button
                             onClick={() => navigate('/command', item)}
-                            className="px-3 py-1.5 rounded-lg bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white text-xs font-semibold transition cursor-pointer flex items-center gap-1.5 shadow-sm"
+                            className="px-3 py-1.5 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-500 hover:to-cyan-500 text-white text-xs font-semibold transition cursor-pointer flex items-center gap-1.5 shadow-sm"
                           >
                             <FolderDown className="w-3.5 h-3.5" />
                             Free Download
@@ -1025,7 +1025,7 @@ ${
             </div>
 
             {/* Command Header */}
-            <div className="rounded-3xl bg-gradient-to-r from-indigo-950/70 via-slate-900 to-cyan-950/50 border border-indigo-500/30 p-6 sm:p-8 shadow-xl">
+            <div className="rounded-3xl bg-gradient-to-r from-emerald-950/70 via-slate-900 to-cyan-950/50 border border-emerald-500/30 p-6 sm:p-8 shadow-xl">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
@@ -1046,9 +1046,9 @@ ${
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
               {/* Left Column: Asset Selector + Free Command Form */}
               <div className="lg:col-span-7 space-y-6">
-                <div className="rounded-2xl bg-slate-900/70 border border-slate-800 p-6">
+                <div className="rounded-2xl bg-[#0B1018]/75 border border-white/[0.08] p-6">
                   <h3 className="text-lg font-bold text-white flex items-center gap-2 mb-4">
-                    <Layers className="w-5 h-5 text-indigo-400" />
+                    <Layers className="w-5 h-5 text-emerald-400" />
                     1. Select Free Project or Asset
                   </h3>
 
@@ -1064,13 +1064,13 @@ ${
                             onClick={() => setCommandTargetListing(item)}
                             className={`p-4 rounded-xl border transition cursor-pointer flex items-center justify-between gap-4 ${
                               isSelected
-                                ? 'bg-indigo-950/50 border-indigo-500 shadow-md'
-                                : 'bg-slate-950/60 border-slate-800/80 hover:border-slate-700'
+                                ? 'bg-emerald-950/50 border-emerald-500 shadow-md'
+                                : 'bg-[#06080C]/65 border-white/[0.08] hover:border-white/[0.12]'
                             }`}
                           >
                             <div className="min-w-0">
                               <div className="flex items-center gap-2">
-                                <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-slate-800 text-indigo-300">
+                                <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-[#121926] text-emerald-300">
                                   {item.category.replace('_', ' ')}
                                 </span>
                                 <span className="text-[10px] font-semibold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">
@@ -1082,7 +1082,7 @@ ${
                                   </span>
                                 )}
                                 {isDownloaded && (
-                                  <span className="text-[10px] font-semibold px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300">
+                                  <span className="text-[10px] font-semibold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">
                                     Downloaded
                                   </span>
                                 )}
@@ -1113,7 +1113,7 @@ ${
                 {commandTargetListing && (
                   <form
                     onSubmit={handleConfirmCommandOrder}
-                    className="rounded-2xl bg-slate-900/70 border border-slate-800 p-6 space-y-4"
+                    className="rounded-2xl bg-[#0B1018]/75 border border-white/[0.08] p-6 space-y-4"
                   >
                     <h3 className="text-lg font-bold text-white flex items-center gap-2">
                       <FolderDown className="w-5 h-5 text-cyan-400" />
@@ -1128,7 +1128,7 @@ ${
                         <select
                           value={selectedEnvironment}
                           onChange={(e) => setSelectedEnvironment(e.target.value)}
-                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white"
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-[#06080C] border border-white/[0.08] text-sm text-white"
                         >
                           <option value="Node.js / Next.js Full-Stack Bundle">
                             Node.js / Next.js Full-Stack Bundle
@@ -1151,7 +1151,7 @@ ${
                               ? `${commandTargetListing.project_file_name} (${formatBytes(commandTargetListing.project_file_size)})`
                               : 'Auto-Generated Source Bundle'
                           }
-                          className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-emerald-400 font-mono"
+                          className="w-full px-3.5 py-2.5 rounded-xl bg-[#06080C] border border-white/[0.08] text-sm text-emerald-400 font-mono"
                         />
                       </div>
                     </div>
@@ -1165,7 +1165,7 @@ ${
                         value={buyerNotes}
                         onChange={(e) => setBuyerNotes(e.target.value)}
                         placeholder="e.g. Include Docker & environment template..."
-                        className="w-full px-3.5 py-2 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white"
+                        className="w-full px-3.5 py-2 rounded-xl bg-[#06080C] border border-white/[0.08] text-sm text-white"
                       />
                     </div>
 
@@ -1178,7 +1178,7 @@ ${
                       <button
                         type="submit"
                         disabled={processingCommand}
-                        className="px-6 py-3 rounded-xl font-bold text-sm bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white shadow-lg shadow-indigo-600/25 cursor-pointer flex items-center gap-2"
+                        className="px-6 py-3 rounded-xl font-bold text-sm bg-gradient-to-r from-emerald-600 via-cyan-600 to-cyan-600 hover:from-emerald-500 hover:to-cyan-500 text-white shadow-lg shadow-emerald-600/25 cursor-pointer flex items-center gap-2"
                       >
                         <Download className="w-4 h-4" />
                         {processingCommand ? 'Preparing Free Bundle...' : 'Download Free Project Now'}
@@ -1191,7 +1191,7 @@ ${
               {/* Right Column: Instant CLI Pull & Direct Source Preview */}
               <div className="lg:col-span-5 space-y-6">
                 {commandTargetListing && (
-                  <div className="rounded-2xl bg-slate-900/70 border border-slate-800 p-6 space-y-5">
+                  <div className="rounded-2xl bg-[#0B1018]/75 border border-white/[0.08] p-6 space-y-5">
                     <div>
                       <span className="text-xs font-mono uppercase text-emerald-400">Direct CLI & Source Access</span>
                       <h3 className="text-lg font-bold text-white mt-1">{commandTargetListing.title}</h3>
@@ -1199,7 +1199,7 @@ ${
                     </div>
 
                     {/* CLI Pull Command Box */}
-                    <div className="rounded-xl bg-slate-950 border border-slate-800 p-4 font-mono text-xs">
+                    <div className="rounded-xl bg-[#06080C] border border-white/[0.08] p-4 font-mono text-xs">
                       <div className="flex items-center justify-between text-slate-400 pb-2 mb-2 border-b border-slate-900">
                         <span className="flex items-center gap-1.5">
                           <Terminal className="w-3.5 h-3.5 text-cyan-400" />
@@ -1212,7 +1212,7 @@ ${
                               'cli-' + commandTargetListing.id
                             )
                           }
-                          className="text-indigo-400 hover:text-indigo-300 cursor-pointer flex items-center gap-1"
+                          className="text-emerald-400 hover:text-emerald-300 cursor-pointer flex items-center gap-1"
                         >
                           {copiedId === 'cli-' + commandTargetListing.id ? 'Copied!' : 'Copy CLI'}
                         </button>
@@ -1224,7 +1224,7 @@ ${
 
                     {/* Embedded Code / Prompt Preview */}
                     {(commandTargetListing.prompt_text || commandTargetListing.code_snippet) && (
-                      <div className="rounded-xl bg-slate-950 border border-slate-800 p-4 font-mono text-xs">
+                      <div className="rounded-xl bg-[#06080C] border border-white/[0.08] p-4 font-mono text-xs">
                         <div className="flex items-center justify-between text-slate-400 pb-2 mb-2 border-b border-slate-900">
                           <span>INCLUDED PROJECT / PROMPT SOURCE</span>
                           <button
@@ -1234,7 +1234,7 @@ ${
                                 'src-' + commandTargetListing.id
                               )
                             }
-                            className="text-indigo-400 hover:text-indigo-300 cursor-pointer"
+                            className="text-emerald-400 hover:text-emerald-300 cursor-pointer"
                           >
                             {copiedId === 'src-' + commandTargetListing.id ? 'Copied!' : 'Copy Source'}
                           </button>
@@ -1248,7 +1248,7 @@ ${
                     {/* Direct One-Click File Download Button */}
                     <button
                       onClick={() => handleDownloadProjectBundle(commandTargetListing)}
-                      className="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold border border-slate-700 cursor-pointer flex items-center justify-center gap-2"
+                      className="w-full py-2.5 rounded-xl bg-[#121926] hover:bg-white/[0.10] text-white text-xs font-semibold border border-white/[0.12] cursor-pointer flex items-center justify-center gap-2"
                     >
                       <FolderDown className="w-4 h-4 text-cyan-400" />
                       {commandTargetListing.project_file_name
@@ -1279,7 +1279,7 @@ ${
             </div>
 
             {/* Admin Header Banner */}
-            <div className="rounded-2xl bg-gradient-to-r from-amber-950/60 via-slate-900 to-indigo-950/60 border border-amber-500/40 p-6 sm:p-8">
+            <div className="rounded-2xl bg-gradient-to-r from-amber-950/60 via-slate-900 to-emerald-950/60 border border-amber-500/40 p-6 sm:p-8">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 text-xs font-semibold">
@@ -1297,7 +1297,7 @@ ${
                 <div className="flex items-center gap-3">
                   <button
                     onClick={fetchAllData}
-                    className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs sm:text-sm font-medium text-white border border-slate-700 cursor-pointer flex items-center gap-2"
+                    className="px-4 py-2 rounded-xl bg-[#121926] hover:bg-white/[0.10] text-xs sm:text-sm font-medium text-white border border-white/[0.12] cursor-pointer flex items-center gap-2"
                   >
                     <RefreshCw className="w-4 h-4" />
                     Refresh Data
@@ -1307,7 +1307,7 @@ ${
             </div>
 
             {!isFirstAccountAdmin ? (
-              <div className="rounded-2xl bg-slate-900/90 border border-amber-500/40 p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div className="rounded-2xl bg-[#0B1018]/90 border border-amber-500/40 p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div className="flex items-start gap-3.5">
                   <Lock className="w-6 h-6 text-amber-400 shrink-0 mt-1" />
                   <div>
@@ -1328,7 +1328,7 @@ ${
                     setAuthMode(noAccountRegisteredYet ? 'signup' : 'login');
                     setAuthModalOpen(true);
                   }}
-                  className="px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs sm:text-sm shrink-0 cursor-pointer transition"
+                  className="px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-zinc-950 font-bold text-xs sm:text-sm shrink-0 cursor-pointer transition"
                 >
                   {noAccountRegisteredYet ? 'Register First Account (#1)' : 'Sign In as Admin'}
                 </button>
@@ -1337,15 +1337,15 @@ ${
               <>
                 {/* Admin KPI Cards */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div className="rounded-2xl bg-slate-900/70 border border-slate-800 p-5">
+                  <div className="rounded-2xl bg-[#0B1018]/75 border border-white/[0.08] p-5">
                     <div className="flex items-center justify-between text-slate-400 text-xs">
                       <span>Registered Accounts</span>
-                      <Users className="w-4 h-4 text-indigo-400" />
+                      <Users className="w-4 h-4 text-emerald-400" />
                     </div>
                     <p className="text-2xl font-extrabold text-white mt-2">{profiles.length}</p>
                   </div>
 
-                  <div className="rounded-2xl bg-slate-900/70 border border-slate-800 p-5">
+                  <div className="rounded-2xl bg-[#0B1018]/75 border border-white/[0.08] p-5">
                     <div className="flex items-center justify-between text-slate-400 text-xs">
                       <span>Free Marketplace Listings</span>
                       <BarChart3 className="w-4 h-4 text-cyan-400" />
@@ -1357,7 +1357,7 @@ ${
                     </p>
                   </div>
 
-                  <div className="rounded-2xl bg-slate-900/70 border border-slate-800 p-5">
+                  <div className="rounded-2xl bg-[#0B1018]/75 border border-white/[0.08] p-5">
                     <div className="flex items-center justify-between text-slate-400 text-xs">
                       <span>Featured Assets</span>
                       <Star className="w-4 h-4 text-amber-400" />
@@ -1369,11 +1369,11 @@ ${
                 </div>
 
                 {/* Section 1: Registered Users */}
-                <div className="rounded-2xl border border-slate-800 bg-slate-900/60 overflow-hidden">
-                  <div className="px-6 py-4 border-b border-slate-800 flex items-center justify-between">
+                <div className="rounded-2xl border border-white/[0.08] bg-[#0B1018]/65 overflow-hidden">
+                  <div className="px-6 py-4 border-b border-white/[0.08] flex items-center justify-between">
                     <div>
                       <h3 className="text-base font-bold text-white flex items-center gap-2">
-                        <Users className="w-4 h-4 text-indigo-400" />
+                        <Users className="w-4 h-4 text-emerald-400" />
                         Registered Users
                       </h3>
                     </div>
@@ -1381,7 +1381,7 @@ ${
                   <div className="overflow-x-auto">
                     <table className="w-full text-left border-collapse text-sm">
                       <thead>
-                        <tr className="border-b border-slate-800 bg-slate-950/60 text-xs uppercase text-slate-400">
+                        <tr className="border-b border-white/[0.08] bg-[#06080C]/65 text-xs uppercase text-slate-400">
                           <th className="py-3 px-4">Order #</th>
                           <th className="py-3 px-4">Full Name & Email</th>
                           <th className="py-3 px-4">Username</th>
@@ -1390,15 +1390,15 @@ ${
                           <th className="py-3 px-4 text-right">Role Controls</th>
                         </tr>
                       </thead>
-                      <tbody className="divide-y divide-slate-800/70">
+                      <tbody className="divide-y divide-white/[0.08]/70">
                         {profiles.map((prof) => (
-                          <tr key={prof.id} className="hover:bg-slate-900/90">
+                          <tr key={prof.id} className="hover:bg-[#0B1018]/90">
                             <td className="py-3 px-4 font-mono text-xs">
                               <span
                                 className={`px-2 py-0.5 rounded font-bold ${
                                   prof.account_number === 1
                                     ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
-                                    : 'bg-slate-800 text-slate-300'
+                                    : 'bg-[#121926] text-slate-300'
                                 }`}
                               >
                                 #{prof.account_number}
@@ -1418,8 +1418,8 @@ ${
                                   prof.role === 'admin'
                                     ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
                                     : prof.role === 'creator'
-                                    ? 'bg-indigo-500/20 text-indigo-300 border border-indigo-500/40'
-                                    : 'bg-slate-800 text-slate-300'
+                                    ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
+                                    : 'bg-[#121926] text-slate-300'
                                 }`}
                               >
                                 {prof.role}
@@ -1432,7 +1432,7 @@ ${
                               <div className="inline-flex items-center gap-1.5">
                                 <button
                                   onClick={() => handleToggleUserRole(prof, 'creator')}
-                                  className="px-2 py-1 rounded bg-indigo-500/15 hover:bg-indigo-500/30 text-indigo-300 text-xs cursor-pointer"
+                                  className="px-2 py-1 rounded bg-emerald-500/15 hover:bg-emerald-500/30 text-emerald-300 text-xs cursor-pointer"
                                 >
                                   Verify Creator
                                 </button>
@@ -1452,8 +1452,8 @@ ${
                 </div>
 
                 {/* Section 2: Marketplace Listings Moderation */}
-                <div className="rounded-2xl border border-slate-800 bg-slate-900/60 overflow-hidden">
-                  <div className="px-6 py-4 border-b border-slate-800">
+                <div className="rounded-2xl border border-white/[0.08] bg-[#0B1018]/65 overflow-hidden">
+                  <div className="px-6 py-4 border-b border-white/[0.08]">
                     <h3 className="text-base font-bold text-white flex items-center gap-2">
                       <FileCode2 className="w-4 h-4 text-cyan-400" />
                       AI Projects, Prompts & Code Moderation Queue
@@ -1462,7 +1462,7 @@ ${
                   <div className="overflow-x-auto">
                     <table className="w-full text-left border-collapse text-sm">
                       <thead>
-                        <tr className="border-b border-slate-800 bg-slate-950/60 text-xs uppercase text-slate-400">
+                        <tr className="border-b border-white/[0.08] bg-[#06080C]/65 text-xs uppercase text-slate-400">
                           <th className="py-3 px-4">Asset Title</th>
                           <th className="py-3 px-4">Category</th>
                           <th className="py-3 px-4">Uploaded Archive</th>
@@ -1470,14 +1470,14 @@ ${
                           <th className="py-3 px-4 text-right">Moderation Actions</th>
                         </tr>
                       </thead>
-                      <tbody className="divide-y divide-slate-800/70">
+                      <tbody className="divide-y divide-white/[0.08]/70">
                         {listings.map((item) => (
-                          <tr key={item.id} className="hover:bg-slate-900/90">
+                          <tr key={item.id} className="hover:bg-[#0B1018]/90">
                             <td className="py-3 px-4">
                               <div className="font-semibold text-white">{item.title}</div>
                               <div className="text-xs text-slate-400">by {item.author_name}</div>
                             </td>
-                            <td className="py-3 px-4 text-xs uppercase font-mono text-indigo-300">
+                            <td className="py-3 px-4 text-xs uppercase font-mono text-emerald-300">
                               {item.category.replace('_', ' ')}
                             </td>
                             <td className="py-3 px-4 font-mono text-xs text-cyan-300">
@@ -1500,8 +1500,8 @@ ${
                                   onClick={() => handleToggleFeatured(item)}
                                   className={`px-2.5 py-1 rounded text-xs cursor-pointer ${
                                     item.is_featured
-                                      ? 'bg-indigo-600 text-white'
-                                      : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+                                      ? 'bg-emerald-600 text-white'
+                                      : 'bg-[#121926] text-slate-300 hover:bg-white/[0.10]'
                                   }`}
                                 >
                                   {item.is_featured ? '★ Featured' : '☆ Feature'}
@@ -1537,8 +1537,8 @@ ${
 
       {/* MODAL 1: SIGN UP & LOGIN */}
       {authModalOpen && (
-        <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="w-full max-w-md rounded-2xl bg-slate-900 border border-slate-800 p-6 shadow-2xl relative">
+        <div className="fixed inset-0 z-50 bg-[#06080C]/85 backdrop-blur-md flex items-center justify-center p-4">
+          <div className="w-full max-w-md rounded-2xl bg-[#0B1018] border border-white/[0.08] p-6 shadow-2xl relative">
             <button
               onClick={() => setAuthModalOpen(false)}
               className="absolute right-4 top-4 text-slate-400 hover:text-white cursor-pointer"
@@ -1546,7 +1546,7 @@ ${
               <X className="w-5 h-5" />
             </button>
 
-            <div className="flex items-center gap-2 text-indigo-400 text-xs font-semibold uppercase tracking-wider">
+            <div className="flex items-center gap-2 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
               <Cpu className="w-4 h-4" />
               BuiltSELL Free Account Portal
             </div>
@@ -1564,7 +1564,7 @@ ${
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
                     placeholder="e.g. Alex Rivera"
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-indigo-500"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#06080C] border border-white/[0.08] text-sm text-white focus:outline-none focus:border-emerald-500"
                   />
                 </div>
               )}
@@ -1577,7 +1577,7 @@ ${
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@builtsell.io"
-                  className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-indigo-500"
+                  className="w-full px-3.5 py-2.5 rounded-xl bg-[#06080C] border border-white/[0.08] text-sm text-white focus:outline-none focus:border-emerald-500"
                 />
               </div>
 
@@ -1590,26 +1590,26 @@ ${
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
-                  className="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-indigo-500"
+                  className="w-full px-3.5 py-2.5 rounded-xl bg-[#06080C] border border-white/[0.08] text-sm text-white focus:outline-none focus:border-emerald-500"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={authSubmitting}
-                className="w-full py-2.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white shadow-lg cursor-pointer transition disabled:opacity-50"
+                className="w-full py-2.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-500 hover:to-cyan-500 text-white shadow-lg cursor-pointer transition disabled:opacity-50"
               >
                 {authSubmitting ? 'Authenticating...' : authMode === 'signup' ? 'Create Free Account' : 'Sign In'}
               </button>
             </form>
 
-            <div className="mt-4 pt-4 border-t border-slate-800 text-center text-xs text-slate-400">
+            <div className="mt-4 pt-4 border-t border-white/[0.08] text-center text-xs text-slate-400">
               {authMode === 'signup' ? (
                 <>
                   Already have an account?{' '}
                   <button
                     onClick={() => setAuthMode('login')}
-                    className="text-indigo-400 hover:underline font-semibold cursor-pointer"
+                    className="text-emerald-400 hover:underline font-semibold cursor-pointer"
                   >
                     Sign In
                   </button>
@@ -1619,7 +1619,7 @@ ${
                   Need a BuiltSELL account?{' '}
                   <button
                     onClick={() => setAuthMode('signup')}
-                    className="text-indigo-400 hover:underline font-semibold cursor-pointer"
+                    className="text-emerald-400 hover:underline font-semibold cursor-pointer"
                   >
                     Sign Up Free
                   </button>
@@ -1632,8 +1632,8 @@ ${
 
       {/* MODAL 2: UPLOAD PROJECT / PROMPT / CODE */}
       {createModalOpen && (
-        <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
-          <div className="w-full max-w-2xl rounded-2xl bg-slate-900 border border-slate-800 p-6 shadow-2xl relative my-8">
+        <div className="fixed inset-0 z-50 bg-[#06080C]/85 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+          <div className="w-full max-w-2xl rounded-2xl bg-[#0B1018] border border-white/[0.08] p-6 shadow-2xl relative my-8">
             <button
               onClick={() => setCreateModalOpen(false)}
               className="absolute right-4 top-4 text-slate-400 hover:text-white cursor-pointer"
@@ -1681,7 +1681,7 @@ ${
                       ? 'border-emerald-400 bg-emerald-500/10'
                       : selectedFile
                       ? 'border-cyan-500/60 bg-cyan-950/20'
-                      : 'border-slate-700 hover:border-indigo-500 bg-slate-950/60'
+                      : 'border-white/[0.12] hover:border-emerald-500 bg-[#06080C]/65'
                   }`}
                 >
                   {selectedFile ? (
@@ -1704,14 +1704,14 @@ ${
                           setSelectedFile(null);
                           if (fileInputRef.current) fileInputRef.current.value = '';
                         }}
-                        className="p-2 rounded-lg bg-slate-800 hover:bg-rose-500/20 text-slate-300 hover:text-rose-300 cursor-pointer"
+                        className="p-2 rounded-lg bg-[#121926] hover:bg-rose-500/20 text-slate-300 hover:text-rose-300 cursor-pointer"
                       >
                         <Trash2 className="w-4 h-4" />
                       </button>
                     </div>
                   ) : (
                     <div className="flex flex-col items-center justify-center py-2">
-                      <UploadCloud className="w-8 h-8 text-indigo-400 mb-2" />
+                      <UploadCloud className="w-8 h-8 text-emerald-400 mb-2" />
                       <p className="text-sm font-semibold text-white">
                         Click to select or drag & drop your project file here
                       </p>
@@ -1729,7 +1729,7 @@ ${
                   <select
                     value={newCategory}
                     onChange={(e) => setNewCategory(e.target.value as AssetCategory)}
-                    className="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white"
+                    className="w-full px-3 py-2 rounded-xl bg-[#06080C] border border-white/[0.08] text-sm text-white"
                   >
                     <option value="ai_project">AI Project</option>
                     <option value="ai_prompt">AI Prompt</option>
@@ -1741,7 +1741,7 @@ ${
                   <select
                     value={newLicense}
                     onChange={(e) => setNewLicense(e.target.value as BuiltSellListing['license_type'])}
-                    className="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white"
+                    className="w-full px-3 py-2 rounded-xl bg-[#06080C] border border-white/[0.08] text-sm text-white"
                   >
                     <option value="MIT Open Source">MIT Open Source (Free)</option>
                     <option value="Commercial License">Free Commercial Use</option>
@@ -1758,7 +1758,7 @@ ${
                   value={newTitle}
                   onChange={(e) => setNewTitle(e.target.value)}
                   placeholder="e.g. Autonomous SQL Optimizer Agent + Full Source"
-                  className="w-full px-3.5 py-2 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white"
+                  className="w-full px-3.5 py-2 rounded-xl bg-[#06080C] border border-white/[0.08] text-sm text-white"
                 />
               </div>
 
@@ -1770,7 +1770,7 @@ ${
                   value={newSummary}
                   onChange={(e) => setNewSummary(e.target.value)}
                   placeholder="One-sentence summary of what your uploaded project does..."
-                  className="w-full px-3.5 py-2 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white"
+                  className="w-full px-3.5 py-2 rounded-xl bg-[#06080C] border border-white/[0.08] text-sm text-white"
                 />
               </div>
 
@@ -1786,7 +1786,7 @@ ${
                       newCategory === 'coding' ? setNewLanguage(e.target.value) : setNewAiModel(e.target.value)
                     }
                     placeholder="e.g. Gemini 2.5 Pro / TypeScript"
-                    className="w-full px-3.5 py-2 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white"
+                    className="w-full px-3.5 py-2 rounded-xl bg-[#06080C] border border-white/[0.08] text-sm text-white"
                   />
                 </div>
                 <div>
@@ -1796,7 +1796,7 @@ ${
                     value={newFramework}
                     onChange={(e) => setNewFramework(e.target.value)}
                     placeholder="e.g. Next.js + Tailwind + Python"
-                    className="w-full px-3.5 py-2 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white"
+                    className="w-full px-3.5 py-2 rounded-xl bg-[#06080C] border border-white/[0.08] text-sm text-white"
                   />
                 </div>
               </div>
@@ -1811,7 +1811,7 @@ ${
                     value={newRepoUrl}
                     onChange={(e) => setNewRepoUrl(e.target.value)}
                     placeholder="https://github.com/username/project"
-                    className="w-full px-3.5 py-2 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white"
+                    className="w-full px-3.5 py-2 rounded-xl bg-[#06080C] border border-white/[0.08] text-sm text-white"
                   />
                 </div>
                 <div>
@@ -1821,7 +1821,7 @@ ${
                     value={newDemoUrl}
                     onChange={(e) => setNewDemoUrl(e.target.value)}
                     placeholder="https://your-demo-url.app"
-                    className="w-full px-3.5 py-2 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white"
+                    className="w-full px-3.5 py-2 rounded-xl bg-[#06080C] border border-white/[0.08] text-sm text-white"
                   />
                 </div>
               </div>
@@ -1846,7 +1846,7 @@ ${
                       ? 'Paste the prompt chain or system instructions...'
                       : 'Paste the core entrypoint or code preview...'
                   }
-                  className="w-full px-3.5 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-white"
+                  className="w-full px-3.5 py-2 rounded-xl bg-[#06080C] border border-white/[0.08] text-xs font-mono text-white"
                 />
               </div>
 
@@ -1858,7 +1858,7 @@ ${
                   value={newDescription}
                   onChange={(e) => setNewDescription(e.target.value)}
                   placeholder="Describe how to install, configure, and run your project..."
-                  className="w-full px-3.5 py-2 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white"
+                  className="w-full px-3.5 py-2 rounded-xl bg-[#06080C] border border-white/[0.08] text-sm text-white"
                 />
               </div>
 
@@ -1866,7 +1866,7 @@ ${
                 <button
                   type="button"
                   onClick={() => setCreateModalOpen(false)}
-                  className="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 text-sm cursor-pointer"
+                  className="px-4 py-2 rounded-xl bg-[#121926] text-slate-300 text-sm cursor-pointer"
                 >
                   Cancel
                 </button>
@@ -1886,8 +1886,8 @@ ${
 
       {/* MODAL 3: ASSET DETAIL */}
       {selectedListing && (
-        <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
-          <div className="w-full max-w-2xl rounded-2xl bg-slate-900 border border-slate-800 p-6 sm:p-8 shadow-2xl relative my-8">
+        <div className="fixed inset-0 z-50 bg-[#06080C]/85 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+          <div className="w-full max-w-2xl rounded-2xl bg-[#0B1018] border border-white/[0.08] p-6 sm:p-8 shadow-2xl relative my-8">
             <button
               onClick={() => setSelectedListing(null)}
               className="absolute right-4 top-4 text-slate-400 hover:text-white cursor-pointer"
@@ -1896,7 +1896,7 @@ ${
             </button>
 
             <div className="flex flex-wrap items-center gap-2">
-              <span className="px-2.5 py-1 rounded-md text-xs font-semibold bg-indigo-500/20 text-indigo-300">
+              <span className="px-2.5 py-1 rounded-md text-xs font-semibold bg-emerald-500/20 text-emerald-300">
                 {selectedListing.category.replace('_', ' ').toUpperCase()}
               </span>
               <span className="px-2.5 py-1 rounded-md text-xs font-semibold bg-emerald-500/20 text-emerald-300">
@@ -1913,8 +1913,8 @@ ${
             <p className="text-sm text-slate-300 mt-2 leading-relaxed">{selectedListing.description}</p>
 
             {(selectedListing.prompt_text || selectedListing.code_snippet) && (
-              <div className="mt-5 rounded-xl bg-slate-950 border border-slate-800 p-4 font-mono text-xs text-slate-200">
-                <div className="flex items-center justify-between text-slate-400 pb-2 mb-2 border-b border-slate-800">
+              <div className="mt-5 rounded-xl bg-[#06080C] border border-white/[0.08] p-4 font-mono text-xs text-slate-200">
+                <div className="flex items-center justify-between text-slate-400 pb-2 mb-2 border-b border-white/[0.08]">
                   <span>SOURCE PAYLOAD</span>
                   <button
                     onClick={() =>
@@ -1923,7 +1923,7 @@ ${
                         selectedListing.id
                       )
                     }
-                    className="text-indigo-400 hover:text-indigo-300 flex items-center gap-1 cursor-pointer"
+                    className="text-emerald-400 hover:text-emerald-300 flex items-center gap-1 cursor-pointer"
                   >
                     {copiedId === selectedListing.id ? 'Copied!' : 'Copy Payload'}
                   </button>
@@ -1942,7 +1942,7 @@ ${
                     href={selectedListing.repo_url}
                     target="_blank"
                     rel="noreferrer"
-                    className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-white flex items-center gap-1.5"
+                    className="px-4 py-2 rounded-xl bg-[#121926] hover:bg-white/[0.10] text-xs font-semibold text-white flex items-center gap-1.5"
                   >
                     Repository <ExternalLink className="w-3.5 h-3.5" />
                   </a>
@@ -1961,10 +1961,10 @@ ${
       )}
 
       {/* Minimal Footer */}
-      <footer className="border-t border-slate-900 bg-slate-950 py-6 px-4 sm:px-6 mt-16">
+      <footer className="border-t border-slate-900 bg-[#06080C] py-6 px-4 sm:px-6 mt-16">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div className="flex items-center gap-2">
-            <Cpu className="w-4 h-4 text-indigo-400" />
+            <Cpu className="w-4 h-4 text-emerald-400" />
             <span className="font-bold text-white">BuiltSELL</span>
             <span>— 100% Free AI Projects, Prompts & Coding Platform</span>
           </div>
